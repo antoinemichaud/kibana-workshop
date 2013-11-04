@@ -69,7 +69,7 @@ $ java -jar logstash-1.2.1-flatjar.jar agent -f logstash-logback.conf
 }
 {% endhighlight %}
 
-<p>On constate que le timestamp enregistré n'est pas du tout lié à celui de la ligne de log. En fait, logstash n'a pas du tout interprété le message. Pour faire celà, il va falloir configurer un filtre pour logstash.</p>
+<p>On constate que le timestamp enregistré n'est pas du tout lié à celui de la ligne de log. En fait, logstash n'a pas du tout interprété le message. Pour faire cela, il va falloir configurer un filtre pour logstash.</p>
 
 <h2>Ajouter de la sémantique</h2>
 
@@ -87,7 +87,7 @@ $ java -jar logstash-1.2.1-flatjar.jar agent -f logstash-logback.conf
 	</ul>
 </p>
 
-<p>Dans un premier temps, nous voulons juste parser le niveau de log. Pour celà, le pattern <code>LOGLEVEL</code> va nous être utile.</p>
+<p>Dans un premier temps, nous voulons juste parser le niveau de log. Pour cela le pattern <code>LOGLEVEL</code> va nous être utile.</p>
 
 {% highlight bash %}
 filter {
@@ -162,7 +162,7 @@ filter {
 
 </p>
 
-<p>À ce niveau, nous constatons que l'intégralité du message a été parsé et est maintenant interprété. Par contre, même si nous avons correctement interprété la date du log, le champ <code>@timestamp</code> contient toujours la date de lecture par logstash. Il serait plus intéressant de mettre dans ce champ la date de log. Pour celà, il va falloir utiliser un autre type de filtre, le filtre date.</p>
+<p>À ce niveau, nous constatons que l'intégralité du message a été parsé et est maintenant interprété. Par contre, même si nous avons correctement interprété la date du log, le champ <code>@timestamp</code> contient toujours la date de lecture par logstash. Il serait plus intéressant de mettre dans ce champ la date de log. Pour cela, il va falloir utiliser un autre type de filtre, le filtre date.</p>
 
 <h3>Filtre date</h3>
 
